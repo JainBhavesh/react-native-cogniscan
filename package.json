@@ -2,6 +2,11 @@
   "name": "DocumentScanner",
   "version": "0.0.1",
   "private": true,
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JainBhavesh/react-native-document-scanner"
+  },
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -9,9 +14,20 @@
     "start": "react-native start",
     "test": "jest"
   },
-  "dependencies": {
+  "author": "Test",
+  "license": "MIT",
+  "keywords": [
+    "react-native",
+    "package"
+  ],
+  "peerDependencies": {
     "react": "18.3.1",
     "react-native": "0.76.1"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-native": "0.76.1",
+    "react-native-document-scanner-plugin": "^0.9.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
