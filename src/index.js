@@ -1,6 +1,6 @@
-import ScanDocument from "./components/ScanDocument";
+import Cogniscan from "./components/Cogniscan";
 import GetMetadata from "./components/GetMetadata";
 export {
-  ScanDocument,
+  Cogniscan,
   GetMetadata
 }

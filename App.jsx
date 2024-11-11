@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Cogniscan from './src/components/ScanDocument';
+import Cogniscan from './src/components/Cogniscan';
 import { GetMetadata } from './src/components/GetMetadata';
 
 export default function App() {
