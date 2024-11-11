@@ -25,4 +25,4 @@ const GetMetadata = () => {
   });
 };
 
-export { GetMetadata};
+export default GetMetadata;
