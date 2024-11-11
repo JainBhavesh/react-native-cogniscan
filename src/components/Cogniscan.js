@@ -40,8 +40,6 @@ const mimeType = getMimeType(result?.scannedImages[0])
     type: mimeType, // The MIME type for the image
     name: fileName, // The name of the file being uploaded
   });
-  console.log(JSON.stringify(formData));
-
   return new Promise((resolve, reject) => {
     try {
       axios.post(
@@ -82,9 +80,6 @@ const Cogniscan = async ({ documentCode, countryCode }) => {
     }
 
     const result = await DocumentScanner.scanDocument(); // Await the scanning operation
-
-    console.log('Scan Result:', result);
-
     if (result?.status === "success") {
       // Proceed with the API call for the scanned document
       const apiResponse = await apiCallForScan(documentCode, countryCode, result);
@@ -93,7 +88,6 @@ const Cogniscan = async ({ documentCode, countryCode }) => {
       throw new Error('No document scanned.');
     }
   } catch (error) {
-    console.log("Error in Cogniscan:", error);
     throw error;  // Re-throw the error to be caught outside
   }
 };
