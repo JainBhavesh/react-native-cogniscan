@@ -1,0 +1,1 @@
+export const BASE_URL = 'http://34.47.197.164:8000/api/v1/doc_ocr/'

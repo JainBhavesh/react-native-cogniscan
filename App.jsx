@@ -1,28 +1,36 @@
-import { useEffect, useState } from 'react';
-import { Image } from 'react-native';
-// import { ScanDocument } from 'react-native-scan-document';
-import DocumentScannerComponent from './src/components/DocumentScannerComponent';
+import { useEffect } from 'react';
+import Cogniscan from './src/components/ScanDocument';
+import { GetMetadata } from './src/components/GetMetadata';
 
 export default function App() {
-  const [scannedImage, setScannedImage] = useState();
-
-  // const getData = async() =>{
-  //   try {
-  //     const result = await ScanDocument();
-  //     console.log('result',result);
+  const getData = async() =>{
+    try {
+       Cogniscan({countryCode:'1',documentCode:'1'}).then((result)=>{
+          console.log('result',result);
+       }).catch(e=>{
+        console.log('errrr',e);
+        
+       })
       
-  //     setScannedImage(result?.scannedImages[0])
-  //     console.log('result',result?.scannedImages[0]);
-  //   } catch (error) {
-  //     console.error('error',error);
+    } catch (error) {
+      console.error('error',error);
 
-  //   }
-  // }
-  // useEffect(() => {
-  //   getData()
-  // }, [])
+    }
+  }
+  const getMetaData = async() =>{
+    try {
+      const res = await GetMetadata();
+      console.log('res',res);
+      
+    } catch (error) {
+      console.log('error',error);
+      
+    }
+  }
+  useEffect(() => {
+    getData();
+    getMetaData()
+  }, [])
   
-  return (
-  <DocumentScannerComponent/>
-  )
+  return null
 }
